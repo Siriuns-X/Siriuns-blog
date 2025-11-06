@@ -1,0 +1,19 @@
+---
+import "../styles/global.css";
+---
+
+<div class="main">
+    <!-- 侧边栏 -->
+    <aside class="main__sidebar decoration__glasscard">
+        <img src="public/images/xrk.gif" class="main__avatar" />
+        <p>Siriuns</p>
+        <nav class="navigation main__navigation">
+            <a href="/">main</a>
+            <a href="/about">about</a>
+            <a href="/blog">blog</a>
+        </nav>
+    </aside>
+
+    <!-- 正文 -->
+    <slot />
+</div>

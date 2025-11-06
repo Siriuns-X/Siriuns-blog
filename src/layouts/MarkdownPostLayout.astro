@@ -1,0 +1,42 @@
+---
+import "../styles/global.css";
+const { frontmatter } = Astro.props;
+---
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <link rel="icon" type="image/gif" href="/images/xrk.gif" />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="generator" content={Astro.generator} />
+        <title>{frontmatter.title}</title>
+    </head>
+    <body>
+        <header class="header decoration__glasscard">
+            <nav class="navigation header__navigation">
+                <a href="/">main</a>
+                <a href="/about">about</a>
+                <a href="/blog">blog</a>
+            </nav>
+        </header>
+        <div class="main">
+            <aside class="main__sidebar decoration__glasscard">
+                <img src="/images/xrk.gif" class="main__avatar" />
+                <p>Siriuns</p>
+                <nav class="navigation main__navigation">
+                    <a href="/">main</a>
+                    <a href="/about">about</a>
+                    <a href="/blog">blog</a>
+                </nav>
+            </aside>
+            <main class="main__content">
+                <div class="main__content--post decoration__glasscard">
+                    <p><slot /></p>
+                </div>
+            </main>
+        </div>
+        <footer class="footer decoration__glasscard">
+            © 2025 | created by Siriuns
+        </footer>
+    </body>
+</html>
