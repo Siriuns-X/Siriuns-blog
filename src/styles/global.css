@@ -1,8 +1,20 @@
-/*  */
 *,
 *::before,
 *::after {
     box-sizing: border-box;
+}
+
+body {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    margin: 1.5rem 4rem;
+    gap: 1rem;
+    min-height: 100vh;
+    background-image: url("/images/background.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
 }
 
 /* body {
@@ -11,22 +23,10 @@
     margin: 1.5rem 4rem;
     gap: 1rem;
     min-height: 100vh;
-    background-image: url("/images/background.png");
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-} */
-body {
-    display: grid;
-    grid-template-rows: auto 1fr auto;
-    margin: 1.5rem 4rem;
-    gap: 1rem;
-    min-height: 100vh;
     background-attachment: fixed;
     background: #EEAECA;
     background: radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
-}
+} */
 
 .header {
     width: 100%;
@@ -35,11 +35,11 @@ body {
     text-align: center;
 }
 
-.header__navigation {
+.navigation--header {
     gap: 1rem;
 }
 
-.header__navigation a {
+.navigation--header a {
     margin: 0rem;
     padding: 0.3rem 0.7rem;
     border-width: 2px;
@@ -112,12 +112,12 @@ body {
 }
 
 
-.main__navigation {
+.navigation--main {
     gap: 0.3rem;
     flex-direction: column;
 }
 
-.main__navigation a {
+.navigation--main a {
     padding: 0.3rem;
     font-size: x-large;
     text-align: center;
@@ -151,11 +151,11 @@ body {
     min-height: 100%;
 }
 
-.decoration__glasscard {
+.glass-card {
 
-    background: rgba(255, 255, 255, 0.175);
-    backdrop-filter: blur(3px) saturate(180%);
-    -webkit-backdrop-filter: blur(12px) saturate(180%);
+    background: rgba(255, 255, 255, 0.50);
+    backdrop-filter: blur(2px) saturate(180%);
+    -webkit-backdrop-filter: blur(1px) saturate(180%);
 
 
     border-radius: 12px;

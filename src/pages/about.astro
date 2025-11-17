@@ -1,34 +1,13 @@
 ---
 // src/pages/about.astro
-import "../styles/global.css";
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
-import Sidebar from "../components/Sidebar.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+const title = "About";
 ---
 
-<html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <link rel="icon" type="image/gif" href="/images/xrk.gif" />
-        <meta name="viewport" content="width=device-width" />
-        <meta name="generator" content={Astro.generator} />
-        <title>Siriuns' blog</title>
-    </head>
-
-    <body>
-        <!-- 顶部导航 -->
-        <Header />
-        <!-- 主体区域 -->
-
-        <Sidebar>
-            <main class="main__content">
-                <div class="main__content--post decoration__glasscard">
-                    <h1 style="text-align: center;">关于</h1>
-                </div>
-            </main>
-        </Sidebar>
-
-        <!-- 底部区域 -->
-        <Footer />
-    </body>
-</html>
+<BaseLayout frontmatter={{ title }}>
+    <main class="main__content">
+        <div class="main__content--post glass-card">
+            <h1 style="text-align: center;">关于</h1>
+        </div>
+    </main>
+</BaseLayout>
