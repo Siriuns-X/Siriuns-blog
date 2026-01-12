@@ -135,6 +135,7 @@ body {
     grid-template-columns: 1fr;
     align-items: start;
     min-width: 0;
+    gap: 1rem;
 }
 
 .main__content--card {

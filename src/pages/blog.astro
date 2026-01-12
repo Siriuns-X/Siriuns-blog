@@ -1,22 +1,22 @@
 ---
 // src/pages/blog.astro
 import BaseLayout from "../layouts/BaseLayout.astro";
-const title = "Siriuns' blog";
+const title = "Posts";
+const allPosts = Object.values(
+    import.meta.glob("./posts/*.md", { eager: true }),
+);
 ---
 
 <BaseLayout frontmatter={{ title }}>
-    <main class="main__content">
-        <a class="main__content--card glass-card" href="/posts/post"
-            ><h1>My First Blog Post</h1>
-            <p>Published on: 2025-10-28</p></a
-        >
-        <a class="main__content--card glass-card" href="/posts/tmux"
-            ><h1>About Tmux</h1>
-            <p>Published on: 2025-11-07</p></a
-        >
-        <a class="main__content--card glass-card" href="/posts/linux"
-            ><h1>Several Linux Command</h1>
-            <p>Published on: 2025-11-17</p></a
-        >
-    </main>
+    {
+        allPosts.map((post: any) => (
+            <a class="main__content--card glass-card" href={post.url}>
+                <h1>{post.frontmatter.title}</h1>
+                <p>
+                    Published on:{" "}
+                    {post.frontmatter.pubDate.toString().slice(0, 10)}
+                </p>
+            </a>
+        ))
+    }
 </BaseLayout>
