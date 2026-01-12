@@ -10,16 +10,16 @@ tags: ["linux"]
 
 ### 基础结构
 
-PE(4MB) => PV(物理盘) => VG => LV(可动态扩展)<br>
-物理扩展 => 物理卷 => 卷组 => 逻辑卷<br>
+PE(4MB) => PV(物理盘) => VG => LV(可动态扩展)
+物理扩展 => 物理卷 => 卷组 => 逻辑卷
 
 ### 常用文件系统类型
 
-`ext4`: Linux 标准日志型文件系统，兼容性好<br>
-`xfs`: 高性能大容量文件系统，适合服务器<br>
-`btrfs`: 支持快照、压缩、RAID的现代文件系统<br>
-`vfat`: 兼容 Windows 的 FAT32,常用于U盘<br>
-`ntfs`: Windows 主文件系统(需`ntfs-3g`包)<br>
+`ext4`: Linux 标准日志型文件系统，兼容性好
+`xfs`: 高性能大容量文件系统，适合服务器
+`btrfs`: 支持快照、压缩、RAID的现代文件系统
+`vfat`: 兼容 Windows 的 FAT32,常用于U盘
+`ntfs`: Windows 主文件系统(需`ntfs-3g`包)
 
 ### 常用命令
 
@@ -42,6 +42,7 @@ PE(4MB) => PV(物理盘) => VG => LV(可动态扩展)<br>
 - `pvmove <PV> [<PV>]`: 将前一个PV的数据转移到后一个PV
 
 #### VG
+
 - `vgs [<VG>]`: 显示系统有哪些VG
 - `vgdisplay [<VG>]`: VG详细信息
 - `vgcreate <VG> <PV> [<PV>...]`: 用PV创建VG
@@ -50,6 +51,7 @@ PE(4MB) => PV(物理盘) => VG => LV(可动态扩展)<br>
 - `vgremove <VG>`
 
 #### LV
+
 - `lvs [<VG>/<LV>]`: 显示系统有哪些LV
 - `lvdiplay [<VG>/<LV>]`: LV详细信息
 - `lvcreate [options] -L <size> -n <LV> <VG>`: 在VG上创建LV并制定大小

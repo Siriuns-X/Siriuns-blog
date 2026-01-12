@@ -16,7 +16,7 @@ Session => Window => Pane => Command
 
 - 查看会话: `tmux ls`
 - 创建会话: `tmux new -s <name>`
-- 分离会话: `tmux detach` or `Ctrl+b d `
+- 分离会话: `tmux detach` or `Ctrl+b d`
 - 连接会话: `tmux attach -t <name>`
 - 终止会话: `tmux kill-session -t <name>`
 - 切换会话: `tmux switch -t <name>`
