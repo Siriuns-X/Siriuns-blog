@@ -1,0 +1,30 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import type { Post } from "../../types";
+
+const allPosts = Object.values(
+    import.meta.glob("../posts/*.md", { eager: true }),
+) as Post[];
+
+const tags = [...new Set(allPosts.map((post) => post.frontmatter.tags).flat())];
+
+const tagCounts = allPosts.reduce((acc, post) => {
+    post.frontmatter.tags.forEach((tag) => {
+        acc.set(tag, (acc.get(tag) || 0) + 1);
+    });
+    return acc;
+}, new Map<string, number>());
+
+const title = "Tags List";
+---
+
+<BaseLayout frontmatter={{ title }}>
+    {
+        tags.map((tag) => (
+            <a class="main__content--card glass-card" href={`/tags/${tag}`}>
+                <h1>{tag}</h1>
+                <p>Articles with this tag: {tagCounts.get(tag)}</p>
+            </a>
+        ))
+    }
+</BaseLayout>

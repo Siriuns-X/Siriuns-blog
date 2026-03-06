@@ -1,15 +1,16 @@
 ---
 // src/pages/blog.astro
 import BaseLayout from "../layouts/BaseLayout.astro";
+import type { Post } from "../types";
 const title = "Posts";
 const allPosts = Object.values(
     import.meta.glob("./posts/*.md", { eager: true }),
-);
+) as Post[];
 ---
 
 <BaseLayout frontmatter={{ title }}>
     {
-        allPosts.map((post: any) => (
+        allPosts.map((post) => (
             <a class="main__content--card glass-card" href={post.url}>
                 <h1>{post.frontmatter.title}</h1>
                 <p>
