@@ -15,6 +15,7 @@
   "type": "commonjs",
   "dependencies": {
     "astro": "^5.15.1",
+    "katex": "^0.16.35",
     "rehype-katex": "^7.0.1",
     "remark-math": "^6.0.0"
   }
