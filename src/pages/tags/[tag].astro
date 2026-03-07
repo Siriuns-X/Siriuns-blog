@@ -2,6 +2,7 @@
 // src/pages/tags/[tag].astro
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import type { Post } from "../../types";
+
 export async function getStaticPaths() {
     const allPosts = Object.values(
         import.meta.glob("../posts/*.md", { eager: true }),
@@ -12,15 +13,20 @@ export async function getStaticPaths() {
     ];
 
     return uniqueTags.map((tag) => {
-        const filteredPosts = allPosts.filter((post) =>
-            post.frontmatter.tags.includes(tag),
-        );
+        const filteredPosts = allPosts
+            .filter((post) => post.frontmatter.tags.includes(tag))
+            .sort(
+                (a, b) =>
+                    new Date(b.frontmatter.pubDate).getTime() -
+                    new Date(a.frontmatter.pubDate).getTime(),
+            );
         return {
             params: { tag },
             props: { filteredPosts },
         };
     });
 }
+
 const { tag } = Astro.params;
 const { filteredPosts } = Astro.props;
 ---

@@ -1,12 +1,11 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import type { Post } from "../../types";
+const title = "Tags List";
 
 const allPosts = Object.values(
     import.meta.glob("../posts/*.md", { eager: true }),
 ) as Post[];
-
-const tags = [...new Set(allPosts.map((post) => post.frontmatter.tags).flat())];
 
 const tagCounts = allPosts.reduce((acc, post) => {
     post.frontmatter.tags.forEach((tag) => {
@@ -15,12 +14,14 @@ const tagCounts = allPosts.reduce((acc, post) => {
     return acc;
 }, new Map<string, number>());
 
-const title = "Tags List";
+const uniqueTags = [...tagCounts.keys()].sort(
+    (a, b) => (tagCounts.get(b) || 0) - (tagCounts.get(a) || 0),
+);
 ---
 
 <BaseLayout frontmatter={{ title }}>
     {
-        tags.map((tag) => (
+        uniqueTags.map((tag) => (
             <a class="main__content--card glass-card" href={`/tags/${tag}`}>
                 <h1>{tag}</h1>
                 <p>Articles with this tag: {tagCounts.get(tag)}</p>

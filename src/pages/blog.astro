@@ -3,9 +3,16 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import type { Post } from "../types";
 const title = "Posts";
+
 const allPosts = Object.values(
     import.meta.glob("./posts/*.md", { eager: true }),
 ) as Post[];
+
+allPosts.sort(
+    (a, b) =>
+        new Date(b.frontmatter.pubDate).getTime() -
+        new Date(a.frontmatter.pubDate).getTime(),
+);
 ---
 
 <BaseLayout frontmatter={{ title }}>
