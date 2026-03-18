@@ -22,7 +22,9 @@ allPosts.sort(
                 <h1>{post.frontmatter.title}</h1>
                 <p>
                     Published on:{" "}
-                    {post.frontmatter.pubDate.toString().slice(0, 10)}
+                    {new Date(post.frontmatter.pubDate).toLocaleDateString(
+                        "en-CA",
+                    )}
                 </p>
             </a>
         ))

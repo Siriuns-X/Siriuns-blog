@@ -8,11 +8,13 @@ const { frontmatter } = Astro.props;
     <div class="main__content--post glass-card">
         <h1>{frontmatter.title}</h1>
         <p>
-            Published on: {frontmatter.pubDate.toString().slice(0, 10)}
+            Published on: {
+                new Date(frontmatter.pubDate).toLocaleDateString("en-CA")
+            }
         </p>
         <p>
             Written by: {frontmatter.author}
         </p>
-        <p><slot /></p>
+        <slot />
     </div>
 </BaseLayout>
