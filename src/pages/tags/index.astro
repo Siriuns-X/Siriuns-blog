@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import GlassCard from "../../components/GlassCard.astro";
 import type { Post } from "../../types";
 const title = "Tags List";
 
@@ -22,10 +23,11 @@ const uniqueTags = [...tagCounts.keys()].sort(
 <BaseLayout frontmatter={{ title }}>
     {
         uniqueTags.map((tag) => (
-            <a class="main__content--card glass-card" href={`/tags/${tag}`}>
-                <h1>{tag}</h1>
-                <p>Articles with this tag: {tagCounts.get(tag)}</p>
-            </a>
+            <GlassCard
+                href={`/tags/${tag}`}
+                title={tag}
+                description={`Articles with this tag: ${tagCounts.get(tag)}`}
+            />
         ))
     }
 </BaseLayout>

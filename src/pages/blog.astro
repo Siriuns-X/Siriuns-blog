@@ -1,6 +1,7 @@
 ---
 // src/pages/blog.astro
 import BaseLayout from "../layouts/BaseLayout.astro";
+import GlassCard from "../components/GlassCard.astro";
 import type { Post } from "../types";
 const title = "Posts";
 
@@ -18,15 +19,11 @@ allPosts.sort(
 <BaseLayout frontmatter={{ title }}>
     {
         allPosts.map((post) => (
-            <a class="main__content--card glass-card" href={post.url}>
-                <h1>{post.frontmatter.title}</h1>
-                <p>
-                    Published on:{" "}
-                    {new Date(post.frontmatter.pubDate).toLocaleDateString(
-                        "en-CA",
-                    )}
-                </p>
-            </a>
+            <GlassCard
+                href={post.url}
+                title={post.frontmatter.title}
+                description={`Published on: ${new Date(post.frontmatter.pubDate).toLocaleDateString("en-CA")}`}
+            />
         ))
     }
 </BaseLayout>
