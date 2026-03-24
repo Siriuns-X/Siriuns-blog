@@ -4,6 +4,7 @@ import { defineConfig } from 'astro/config';
 import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
 // === @USER_ADD END ===
+import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
@@ -11,6 +12,8 @@ export default defineConfig({
     markdown: {
         remarkPlugins: [remarkMath],
         rehypePlugins: [rehypeKatex],
-    }
+    },
     // === @USER_ADD END ===
+    site: "https://siriuns.netlify.app",
+    integrations: [sitemap()],
 });

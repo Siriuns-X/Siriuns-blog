@@ -14,6 +14,7 @@
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
+    "@astrojs/sitemap": "^3.7.1",
     "astro": "^5.15.1",
     "katex": "^0.16.35",
     "rehype-katex": "^7.0.1",
