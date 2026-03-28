@@ -1,17 +1,17 @@
-# 【1. 依赖与安装】
+# 1. 依赖与安装
 node_modules/
 
-# 【2. 构建输出】
+# 2. 构建输出
 # Astro 编译后的成品
 dist/
 
-# 【3. 缓存与临时文件】
+# 3. 缓存与临时文件
 # Astro 的运行时缓存
 .astro/
 # Vite 的缓存
 .vite/
 
-# 【5. 操作系统垃圾文件】
+# 5. 操作系统垃圾文件
 # macOS
 .DS_Store
 .AppleDouble
@@ -23,12 +23,18 @@ Thumbs.db:encryptable
 ehthumbs.db
 desktop.ini
 
-# 【6. 编辑器配置】
+# 6. 编辑器与工具配置
 # VS Code
 .vscode/*
 !.vscode/extensions.json
 !.vscode/settings.json
 !.vscode/launch.json
+# Claude Code
+.Claude/
 
-# 【7. 日志文件】
+# 7. 日志文件
 npm-debug.log*
+
+# 8. 环境变量
+.env
+.env.*
