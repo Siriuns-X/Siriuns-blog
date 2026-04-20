@@ -6,10 +6,10 @@ import type { Post } from "../types";
 const title = "Posts";
 
 const allPosts = Object.values(
-    import.meta.glob("./posts/*.md", { eager: true }),
-) as Post[];
+    import.meta.glob<Post>("./posts/*.md", { eager: true }),
+);
 
-allPosts.sort(
+const sortedPosts = allPosts.toSorted(
     (a, b) =>
         new Date(b.frontmatter.pubDate).getTime() -
         new Date(a.frontmatter.pubDate).getTime(),
@@ -18,7 +18,7 @@ allPosts.sort(
 
 <BaseLayout frontmatter={{ title }}>
     {
-        allPosts.map((post) => (
+        sortedPosts.map((post) => (
             <GlassCard
                 href={post.url}
                 title={post.frontmatter.title}
