@@ -1,7 +1,10 @@
 ---
 // src/layouts/BaseLayout.astro
 import "../styles/global.css";
+
 import "katex/dist/katex.min.css";
+import { ClientRouter } from "astro:transitions";
+
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import Main from "../components/Main.astro";
@@ -10,8 +13,9 @@ const { frontmatter } = Astro.props;
 
 <html lang="en">
     <head>
+        <ClientRouter />
         <meta charset="UTF-8" />
-        <link rel="icon" type="image/gif" href="/images/xrk.gif" />
+        <link rel="icon" type="image/png" href="/images/icon.png" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="generator" content={Astro.generator} />
         <title>{frontmatter.title} | Siriuns' blog</title>
