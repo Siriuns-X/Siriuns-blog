@@ -1,19 +1,22 @@
 import { defineConfig } from 'astro/config';
 
-// === @USER_ADD: LaTeX Support Dependencies START ===
+// #region @USER_ADD: LaTeX Support Dependencies
 import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
-// === @USER_ADD END ===
+// #endregion
 import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-    // === @USER_ADD: LaTeX Markdown Engine START ===
+    // #region @USER_ADD: LaTeX Markdown Engine
     markdown: {
         remarkPlugins: [remarkMath],
         rehypePlugins: [rehypeKatex],
     },
-    // === @USER_ADD END ===
-    site: "https://siriuns.netlify.app",
+    // #endregion
+
+    // #region @USER_ADD: RSS And Sitemap
+    site: 'https://siriuns.netlify.app',
     integrations: [sitemap()],
+    // #endregion
 });
