@@ -1,7 +1,8 @@
 ---
-// src/layouts/MarkdownPostLayout.astro
+import type { PostFrontmatter } from "../types";
 import BaseLayout from "./BaseLayout.astro";
-const { frontmatter } = Astro.props;
+
+const { frontmatter } = Astro.props as { frontmatter: PostFrontmatter };
 ---
 
 <BaseLayout frontmatter={frontmatter}>

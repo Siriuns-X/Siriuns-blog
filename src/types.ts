@@ -7,3 +7,14 @@ export interface Post {
     };
     url: string;
 }
+
+export interface BaseFrontmatter {
+    title: string;
+    description?: string;
+}
+
+export interface PostFrontmatter extends BaseFrontmatter {
+    pubDate: string,
+    tags: string[],
+    author: string,
+}
