@@ -4,7 +4,7 @@ title: 'Basic Usage Of Tmux'
 pubDate: 2025-11-07
 description: 'This is a blog about basic usage of tmux.'
 author: 'Siriuns'
-tags: ["tmux"]
+tags: ["tmux", "linux"]
 ---
 ## tmux的结构
 

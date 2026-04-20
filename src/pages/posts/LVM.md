@@ -1,12 +1,12 @@
 ---
 layout: ../../layouts/MarkdownPostLayout.astro
-title: 'Several Linux Command'
+title: 'Several Linux Command for Storage'
 pubDate: 2025-11-17
-description: 'recording several basic linux command'
+description: 'recording several basic linux command about LVM'
 author: 'Siriuns'
 tags: ["linux"]
 ---
-## 关于存储(基于open Euler教程写的)
+## 关于存储
 
 ### 基础结构
 
