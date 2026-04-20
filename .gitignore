@@ -25,6 +25,7 @@ desktop.ini
 
 # 6. 编辑器与工具配置
 # VS Code
+.vscode
 .vscode/*
 !.vscode/extensions.json
 !.vscode/settings.json

@@ -41,7 +41,7 @@ const { filteredPosts } = Astro.props;
             <GlassCard
                 href={post.url}
                 title={post.frontmatter.title}
-                description={`Published on: ${post.frontmatter.pubDate.toString().slice(0, 10)}`}
+                content={`Published on: ${post.frontmatter.pubDate.toString().slice(0, 10)}`}
             />
         ))
     }

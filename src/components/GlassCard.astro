@@ -3,14 +3,12 @@ import "../styles/global.css";
 interface Props {
     href: string;
     title: string;
-    description: string;
+    content: string;
 }
-const { href, title, description } = Astro.props;
+const { href, title, content } = Astro.props;
 ---
 
 <a class="main__content--card glass-card" href={href}>
     <h1>{title}</h1>
-    <p>
-        {description}
-    </p>
+    <p set:html={content} />
 </a>

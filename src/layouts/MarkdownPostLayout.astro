@@ -14,7 +14,8 @@ const { frontmatter } = Astro.props as { frontmatter: PostFrontmatter };
             }
         </p>
         <p>
-            Written by: {frontmatter.author}
+            Written by: {frontmatter.author}<br />
+            description: {frontmatter.description}
         </p>
         <slot />
     </div>

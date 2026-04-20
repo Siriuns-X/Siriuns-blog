@@ -26,7 +26,7 @@ const uniqueTags = [...tagCounts.keys()].sort(
             <GlassCard
                 href={`/tags/${tag}`}
                 title={tag}
-                description={`Articles with this tag: ${tagCounts.get(tag)}`}
+                content={`Articles with this tag: ${tagCounts.get(tag)}`}
             />
         ))
     }

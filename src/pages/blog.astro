@@ -22,7 +22,8 @@ const sortedPosts = allPosts.toSorted(
             <GlassCard
                 href={post.url}
                 title={post.frontmatter.title}
-                description={`Published on: ${new Date(post.frontmatter.pubDate).toLocaleDateString("en-CA")}`}
+                content={`Published on: ${new Date(post.frontmatter.pubDate).toLocaleDateString("en-CA")}<br/>
+                Description: ${post.frontmatter.description}`}
             />
         ))
     }
