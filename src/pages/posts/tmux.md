@@ -1,8 +1,8 @@
 ---
 layout: ../../layouts/MarkdownPostLayout.astro
-title: 'Basic Usage Of Tmux'
+title: 'Tmux'
 pubDate: 2025-11-07
-description: 'This is a blog about basic usage of tmux.'
+description: '列举一些常用tmux命令'
 author: 'Siriuns'
 tags: ["tmux", "linux"]
 ---

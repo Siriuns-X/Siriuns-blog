@@ -1,8 +1,8 @@
 ---
 layout: ../../layouts/MarkdownPostLayout.astro
-title: 'Several Linux Command for Storage'
+title: '关于LVM'
 pubDate: 2025-11-17
-description: 'recording several basic linux command about LVM'
+description: 'LVM的结构和常用文件命令'
 author: 'Siriuns'
 tags: ["linux"]
 ---

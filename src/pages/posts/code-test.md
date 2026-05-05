@@ -1,8 +1,8 @@
 ---
 layout: ../../layouts/MarkdownPostLayout.astro
-title: 'A test page for code'
+title: 'code测试页面'
 pubDate: 2026-4-30
-description: 'just nothing.'
+description: '测试代码块显示'
 author: 'Siriuns'
 tags: ["code", "test"]
 ---
