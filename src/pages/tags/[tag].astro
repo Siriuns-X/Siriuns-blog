@@ -6,7 +6,7 @@ import type { Post } from "../../types";
 
 export async function getStaticPaths() {
     const allPosts = Object.values(
-        import.meta.glob<Post>("../posts/*.md", { eager: true }),
+        import.meta.glob<Post>("../posts/**/*.md", { eager: true }),
     );
 
     const uniqueTags = [

@@ -5,7 +5,7 @@ import type { Post } from "../../types";
 const title = "Tags List";
 
 const allPosts = Object.values(
-    import.meta.glob<Post>("../posts/*.md", { eager: true }),
+    import.meta.glob<Post>("../posts/**/*.md", { eager: true }),
 );
 
 const tagCounts = allPosts.reduce((acc, post) => {
