@@ -1,6 +1,7 @@
 import { defineConfig } from 'astro/config';
 
 // #region @USER_ADD: LaTeX Support Dependencies
+import { unified } from "@astrojs/markdown-remark";
 import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
 // #endregion
@@ -10,13 +11,14 @@ import sitemap from '@astrojs/sitemap';
 export default defineConfig({
     markdown: {
         // #region @USER_ADD: LaTeX Markdown Engine
-        remarkPlugins: [remarkMath],
-        rehypePlugins: [rehypeKatex],
+        processor: unified({
+            remarkPlugins: [remarkMath],
+            rehypePlugins: [rehypeKatex],
+
+        }),
         // #endregion
-        // #region @USER_ADD: todo
 
-        // syntaxHighlight: "prism",
-
+        // #region @USER_ADD: Code Highlight Engine
         shikiConfig: {
             defaultColor: false,
             themes: {
