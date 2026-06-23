@@ -13,8 +13,16 @@ export default defineConfig({
         // #region @USER_ADD: LaTeX Markdown Engine
         processor: unified({
             remarkPlugins: [remarkMath],
-            rehypePlugins: [rehypeKatex],
-
+            rehypePlugins: [
+                [
+                    rehypeKatex,
+                    {
+                        macros: {
+                            "\\dd": "\\mathop{}\\!\\mathrm{d}",
+                        },
+                    },
+                ],
+            ],
         }),
         // #endregion
 
