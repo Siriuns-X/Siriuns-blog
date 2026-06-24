@@ -107,7 +107,7 @@ body {
     display: grid;
     grid-template-rows: auto 1fr auto;
     gap: 1rem;
-    margin: 1.5rem 4rem;
+    margin: 1.5rem clamp(1rem, 6vw, 4rem);
     min-height: calc(100vh - 3rem);
     background-image: url("/images/background.png");
     background-size: cover;
@@ -243,6 +243,12 @@ body {
     min-width: 0;
 }
 
+.main__content strong {
+    text-decoration-line: underline;
+    text-decoration-thickness: 0.1em;
+    text-underline-offset: 0.2em;
+}
+
 .main__content--card {
     padding: 2rem;
 
@@ -260,9 +266,15 @@ body {
 
 .main__content--post {
     min-height: 100%;
+    min-width: 0;
     padding: 2rem;
-
     color: var(--sys-color-text);
+}
+
+.main__content--post .katex-display {
+    max-width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
 }
 
 .main__content--post> :first-child {
@@ -313,3 +325,9 @@ body {
 }
 
 /* #endregion */
+
+@media (max-width: 720px) {
+    .main__sidebar {
+        display: none;
+    }
+}
