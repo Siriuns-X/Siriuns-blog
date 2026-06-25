@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "check": "astro check",
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview"
@@ -21,5 +22,8 @@
     "katex": "^0.16.35",
     "rehype-katex": "^7.0.1",
     "remark-math": "^6.0.0"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.9"
   }
 }
