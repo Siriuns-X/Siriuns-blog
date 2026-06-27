@@ -335,3 +335,12 @@ body {
         display: none;
     }
 }
+
+@font-face {
+    font-family: "NewCMMath";
+    src: url('../fonts/NewCMMath-Book.woff2') format('woff2');
+}
+
+math {
+    font-family: "NewCMMath", math;
+}

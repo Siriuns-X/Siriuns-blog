@@ -1,31 +1,18 @@
 import { defineConfig } from 'astro/config';
 
 // #region @USER_ADD: LaTeX Support Dependencies
-import { unified } from "@astrojs/markdown-remark";
-import remarkMath from 'remark-math';
-import rehypeKatex from 'rehype-katex';
+import { mathRenderPlugin } from './math-plugin.mjs';
+import { satteri } from '@astrojs/markdown-satteri';
 // #endregion
 import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
     markdown: {
-        // #region @USER_ADD: LaTeX Markdown Engine
-        processor: unified({
-            remarkPlugins: [remarkMath],
-            rehypePlugins: [
-                [
-                    rehypeKatex,
-                    {
-                        macros: {
-                            "\\dd": "\\mathop{}\\!\\mathrm{d}",
-                        },
-                    },
-                ],
-            ],
+        processor: satteri({
+            features: { math: true },
+            mdastPlugins: [mathRenderPlugin]
         }),
-        // #endregion
-
         // #region @USER_ADD: Code Highlight Engine
         shikiConfig: {
             defaultColor: false,
