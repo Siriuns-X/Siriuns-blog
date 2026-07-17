@@ -42,18 +42,18 @@
         --sys-color-text: var(--ref-color-black);
         --sys-color-text-hover: var(--ref-color-white);
 
-        --sys-color-nav-border: var(--ref-color-black-a50);
+        --sys-color-nav-border: var(--ref-color-black-a70);
         --sys-color-nav-border-hover: var(--ref-color-white-a50);
 
         --sys-color-nav-background: var(--ref-color-white-a30);
         --sys-color-nav-background-hover: var(--ref-color-black-a30);
 
-        --sys-color-card-background: var(--ref-color-white-a30);
+        --sys-color-card-background: var(--ref-color-white-a50);
         --sys-color-card-avatar: var(--ref-color-white);
         --sys-color-card-shadow: var(--ref-color-white-a30);
         --sys-color-card-border: var(--ref-color-black-a40);
 
-        --sys-color-code-background: var(--ref-color-black-a70);
+        --sys-color-code-background: var(--ref-color-white-a30);
         /* #endregion */
 
         .astro-code,
@@ -80,7 +80,7 @@
         --sys-color-card-shadow: var(--ref-color-black-a50);
         --sys-color-card-border: var(--ref-color-white-a40);
 
-        --sys-color-code-background: var(--ref-color-black-a70);
+        --sys-color-code-background: var(--ref-color-black-a30);
         /* #endregion */
 
         .astro-code,
@@ -322,8 +322,10 @@ body {
 }
 
 :not(pre)>code {
-    padding: 0.15em 0.35em;
+    padding: 0.1em 0.35em;
     border-radius: 0.2em;
+
+    font-size: 1.4em;
 
     background-color: var(--sys-color-code-background);
 }
@@ -334,4 +336,12 @@ body {
     .main__sidebar {
         display: none;
     }
+}
+
+a {
+    color: var(--sys-color-text);
+}
+
+a:visited {
+    color: var(--sys-color-text);
 }
