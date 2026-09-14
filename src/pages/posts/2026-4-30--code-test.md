@@ -4,7 +4,7 @@ title: 'code测试页面'
 pubDate: 2026-4-30
 description: '测试代码块显示'
 author: 'Siriuns'
-tags: ["code", "test"]
+tags: ["test"]
 ---
 
 ## 行内代码
