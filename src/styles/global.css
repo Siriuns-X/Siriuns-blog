@@ -345,3 +345,8 @@ a {
 a:visited {
     color: var(--sys-color-text);
 }
+
+img {
+    max-width: 100%;
+    height: auto;
+}
