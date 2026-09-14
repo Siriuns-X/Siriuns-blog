@@ -1,0 +1,11 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { Content } from "../data/log.md";
+const title = "Log";
+---
+
+<BaseLayout frontmatter={{ title }}>
+    <div class="main__content--post glass-card">
+        <Content />
+    </div>
+</BaseLayout>
