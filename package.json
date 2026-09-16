@@ -24,7 +24,7 @@
     "math-core": "^0.6.4",
     "rehype-katex": "^7.0.1",
     "remark-math": "^6.0.0",
-    "satteri": "^0.9.2"
+    "satteri-mathml": "^0.1.1"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.9"

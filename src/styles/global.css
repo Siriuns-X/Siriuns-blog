@@ -1,3 +1,5 @@
+@import "satteri-mathml/style.css";
+
 *,
 *::before,
 *::after {
@@ -336,11 +338,11 @@ body {
     }
 }
 
-@font-face {
+/* @font-face {
     font-family: "NewCMMath";
     src: url('../fonts/NewCMMath-Book.woff2') format('woff2');
 }
 
 math {
     font-family: "NewCMMath", math;
-}
+} */

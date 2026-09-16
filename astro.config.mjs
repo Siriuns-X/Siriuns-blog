@@ -1,7 +1,7 @@
 import { defineConfig } from 'astro/config';
 
 // #region @USER_ADD: LaTeX Support Dependencies
-import { mathRenderPlugin } from './math-plugin.mjs';
+import satteriMathml from "satteri-mathml";
 import { satteri } from '@astrojs/markdown-satteri';
 // #endregion
 import sitemap from '@astrojs/sitemap';
@@ -11,7 +11,7 @@ export default defineConfig({
     markdown: {
         processor: satteri({
             features: { math: true },
-            mdastPlugins: [mathRenderPlugin]
+            mdastPlugins: [satteriMathml({ macros: { dd: "\\mathrm{d}" } })]
         }),
         // #region @USER_ADD: Code Highlight Engine
         shikiConfig: {
