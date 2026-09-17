@@ -1,5 +1,6 @@
 # 1. 依赖与安装
 node_modules/
+.direnv/
 
 # 2. 构建输出
 # Astro 编译后的成品
