@@ -7,7 +7,6 @@
 }
 
 :root {
-    /* #region @REF-TOKENS */
     --ref-color-black: rgba(0, 0, 0, 1);
     --ref-color-black-a10: rgba(0, 0, 0, 0.1);
     --ref-color-black-a20: rgba(0, 0, 0, 0.2);
@@ -31,32 +30,27 @@
     --ref-color-white-a90: rgba(255, 255, 255, 0.9);
 
     --ref-color-gray: rgba(127, 127, 127, 1);
-    /* #endregion */
 
-    /* #region @SYS-TOKENS */
     --sys-color-scrollbar: rgba(60, 0, 255, 0.5);
-    /* #endregion */
 }
 
 @media (prefers-color-scheme: light) {
     :root {
-        /* #region @SYS-TOKENS */
         --sys-color-text: var(--ref-color-black);
         --sys-color-text-hover: var(--ref-color-white);
 
-        --sys-color-nav-border: var(--ref-color-black-a50);
+        --sys-color-nav-border: var(--ref-color-black-a70);
         --sys-color-nav-border-hover: var(--ref-color-white-a50);
 
         --sys-color-nav-background: var(--ref-color-white-a30);
         --sys-color-nav-background-hover: var(--ref-color-black-a30);
 
-        --sys-color-card-background: var(--ref-color-white-a30);
+        --sys-color-card-background: var(--ref-color-white-a50);
         --sys-color-card-avatar: var(--ref-color-white);
         --sys-color-card-shadow: var(--ref-color-white-a30);
         --sys-color-card-border: var(--ref-color-black-a40);
 
-        --sys-color-code-background: var(--ref-color-black-a70);
-        /* #endregion */
+        --sys-color-code-background: var(--ref-color-white-a30);
 
         .astro-code,
         .astro-code span {
@@ -67,7 +61,6 @@
 
 @media (prefers-color-scheme: dark) {
     :root {
-        /* #region @SYS-TOKENS */
         --sys-color-text: var(--ref-color-white);
         --sys-color-text-hover: var(--ref-color-black);
 
@@ -82,8 +75,7 @@
         --sys-color-card-shadow: var(--ref-color-black-a50);
         --sys-color-card-border: var(--ref-color-white-a40);
 
-        --sys-color-code-background: var(--ref-color-black-a70);
-        /* #endregion */
+        --sys-color-code-background: var(--ref-color-black-a30);
 
         .astro-code,
         .astro-code span {
@@ -134,7 +126,6 @@ body {
     color: var(--sys-color-text);
 }
 
-/* #region @BLOCK: NAVIGATION */
 
 .navigation {
     display: flex;
@@ -190,16 +181,13 @@ body {
     text-align: center;
 }
 
-/* #endregion */
 
-/* #region @BLOCK: MAIN */
 
 .main {
     display: flex;
     gap: 1rem;
 }
 
-/* #region @ELEMENT: SIDEBAR */
 
 .main__sidebar {
     position: sticky;
@@ -226,7 +214,6 @@ body {
     display: block;
 }
 
-/* #endregion */
 
 .main__avatar {
     display: block;
@@ -235,7 +222,6 @@ body {
     box-shadow: 0 0 10px var(--sys-color-card-avatar);
 }
 
-/* #region @ELEMENT: CONTENT */
 
 .main__content {
     display: grid;
@@ -291,9 +277,7 @@ body {
     margin-bottom: 0;
 }
 
-/* #endregion */
 
-/* #endregion */
 
 .glass-card {
     border-radius: 12px;
@@ -306,7 +290,6 @@ body {
         inset 0 0 0 1px var(--sys-color-card-border);
 }
 
-/* #region @GLOBAL: CODE */
 
 .astro-code {
     margin: 1.5rem 0;
@@ -324,13 +307,14 @@ body {
 }
 
 :not(pre)>code {
-    padding: 0.15em 0.35em;
+    padding: 0.1em 0.35em;
     border-radius: 0.2em;
+
+    font-size: 1.4em;
 
     background-color: var(--sys-color-code-background);
 }
 
-/* #endregion */
 
 @media (max-width: 720px) {
     .main__sidebar {
@@ -346,3 +330,16 @@ body {
 math {
     font-family: "NewCMMath", math;
 } */
+
+a {
+    color: var(--sys-color-text);
+}
+
+a:visited {
+    color: var(--sys-color-text);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}

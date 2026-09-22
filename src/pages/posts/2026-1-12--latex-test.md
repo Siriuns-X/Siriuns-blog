@@ -4,7 +4,7 @@ title: 'latex测试页面'
 pubDate: 2026-1-12
 description: '测试latex显示'
 author: 'Siriuns'
-tags: ["latex", "test"]
+tags: ["test"]
 ---
 
 ## Gamma function
